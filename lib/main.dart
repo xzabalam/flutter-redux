@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart' as hooks;
 import 'package:flutter_map_redux/enumeration/enumeration.dart';
+import 'package:flutter_map_redux/screens/first_page.dart';
 import 'package:flutter_map_redux/state/actions/main_action.dart';
 import 'package:flutter_map_redux/state/models/app_state.dart' as appState;
 import 'package:flutter_map_redux/state/reducers/app_reducers.dart';
@@ -88,6 +89,14 @@ class HomePage extends hooks.HookWidget {
                           return ListTile(title: Text(item));
                         }));
               },
+            ),
+            TextButton(
+              onPressed: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context) {
+                  return const FirstPage(title: 'FirstPage');
+                }));
+              },
+              child: const Text('Next'),
             )
           ],
         ),
